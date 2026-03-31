@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DecorLux – India's #1 Premium Event Decoration Booking Platform. Birthday, Wedding, Anniversary, Baby Shower and more across 6 cities." />
+  <meta name="keywords" content="event decoration, birthday decoration, wedding decor, Patna, Delhi, Mumbai" />
+  <meta name="author" content="Saif" />
+  <title>DecorLux | Premium Event Decoration Booking</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ====== CUSTOM CURSOR ====== -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- ====== PAGE LOADER ====== -->
+  <div id="loader">
+    <div class="loader-logo">✦ DecorLux</div>
+    <div class="loader-bar"><div class="loader-fill"></div></div>
+    <div class="loader-text">Crafting your experience...</div>
+  </div>
+
+  <!-- ====== PROMO RIBBON ====== -->
+  <div class="ribbon" id="ribbon">
+    🎉 Use code <strong>SAIF20</strong> for 20% off your first booking!
+    <button class="ribbon-close" onclick="document.getElementById('ribbon').remove()">×</button>
+  </div>
+
+  <!-- ====== NAVBAR ====== -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">✦ DecorLux</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#tracking">Track Order</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#cities">Cities</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#" class="nav-cta" id="navBookBtn">Book Now</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ====== HERO SECTION ====== -->
+  <section id="hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-particles" id="particles"></div>
+    <!-- Background image mosaic -->
+    <div class="hero-images-bg">
+      <div class="hero-img-tile" style="background-image:url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=80')"></div>
+      <div class="hero-img-tile" style="background-image:url('https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80')"></div>
+      <div class="hero-img-tile" style="background-image:url('https://images.unsplash.com/photo-1478146059778-26028b07395a?w=600&q=80')"></div>
+      <div class="hero-img-tile" style="background-image:url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&q=80')"></div>
+      <div class="hero-img-tile" style="background-image:url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=600&q=80')"></div>
+      <div class="hero-img-tile" style="background-image:url('https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=600&q=80')"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">⭐ India's #1 Event Decoration Platform</div>
+      <h1 class="hero-title">
+        Transform Any
+        <span>Moment into Magic</span>
+      </h1>
+      <p class="hero-subtitle">
+        Premium event decoration delivered to your doorstep. From intimate
+        birthdays to grand weddings — we craft unforgettable memories.
+      </p>
+
+      <!-- Occasion quick-select chips -->
+      <div class="occasions-row" id="occasionChips">
+        <div class="occasion-chip active" data-occasion="Birthday">🎂 Birthday</div>
+        <div class="occasion-chip" data-occasion="Anniversary">💑 Anniversary</div>
+        <div class="occasion-chip" data-occasion="Wedding">💍 Wedding</div>
+        <div class="occasion-chip" data-occasion="Baby Shower">🍼 Baby Shower</div>
+        <div class="occasion-chip" data-occasion="Proposal">💐 Proposal</div>
+      </div>
+
+      <div class="hero-btns">
+        <button class="btn-primary" id="heroBookBtn">
+          <i class="fas fa-calendar-check"></i> Book Now
+        </button>
+        <a href="#gallery" class="btn-secondary">
+          <i class="fas fa-images"></i> View Gallery
+        </a>
+      </div>
+
+      <!-- Animated statistics -->
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num" data-target="5000">0+</span><span class="stat-label">Happy Clients</span></div>
+        <div class="stat"><span class="stat-num" data-target="50">0+</span><span class="stat-label">Packages</span></div>
+        <div class="stat"><span class="stat-num" data-target="6">0+</span><span class="stat-label">Cities</span></div>
+        <div class="stat"><span class="stat-num" data-target="99">0%</span><span class="stat-label">Satisfaction</span></div>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      SCROLL
+    </div>
+  </section>
+
+  <!-- ====== INCLUSIONS SECTION ====== -->
+  <section id="inclusions">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label">What's Included</span>
+        <h2 class="section-title">Every Package <span>Includes</span></h2>
+        <div class="section-divider center"></div>
+      </div>
+      <div class="inclusions-grid" id="inclusionsGrid">
+        <!-- Populated by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PACKAGES SECTION ====== -->
+  <section id="packages">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Our Packages</span>
+        <h2 class="section-title">Choose Your <span>Perfect Package</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-sub">
+          Handcrafted decoration packages for every occasion and budget.
+          All prices include professional setup and cleanup.
+        </p>
+      </div>
+      <div class="packages-grid" id="packagesGrid">
+        <!-- Populated by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== GALLERY SECTION ====== -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label">Our Work</span>
+        <h2 class="section-title">Our <span>Gallery</span></h2>
+        <div class="section-divider center"></div>
+        <p class="section-sub">Browse our curated collection of stunning event setups.</p>
+      </div>
+      <!-- Filter Buttons -->
+      <div class="gallery-filters" id="galleryFilters">
+        <button class="filter-btn active" data-cat="all">All</button>
+        <button class="filter-btn" data-cat="birthday">🎂 Birthday</button>
+        <button class="filter-btn" data-cat="wedding">💍 Wedding</button>
+        <button class="filter-btn" data-cat="anniversary">💑 Anniversary</button>
+        <button class="filter-btn" data-cat="proposal">💐 Proposal</button>
+        <button class="filter-btn" data-cat="babyshower">🍼 Baby Shower</button>
+      </div>
+      <!-- Gallery Grid -->
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- Populated by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== ORDER TRACKING SECTION ====== -->
+  <section id="tracking">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label">Track Your Order</span>
+        <h2 class="section-title">Live <span>Order Status</span></h2>
+        <div class="section-divider center"></div>
+        <p class="section-sub">Enter your booking reference ID to check real-time status.</p>
+      </div>
+      <div class="tracking-box">
+        <div class="tracking-input-row">
+          <input type="text" id="trackingInput" placeholder="Enter Booking ID (e.g. DL-2026-XXXX)" />
+          <button class="btn-track" id="trackBtn"><i class="fas fa-search"></i> Track</button>
+        </div>
+        <div id="trackingResult" style="display:none">
+          <div class="timeline" id="timeline"></div>
+        </div>
+        <div id="trackingEmpty" class="tracking-empty">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>Enter your booking ID to track your order</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== REVIEWS SECTION ====== -->
+  <section id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Testimonials</span>
+        <h2 class="section-title">What Our <span>Clients Say</span></h2>
+        <div class="section-divider"></div>
+      </div>
+      <!-- Rating Summary -->
+      <div class="rating-summary">
+        <div class="rating-big">
+          <div class="rating-num">4.9</div>
+          <div class="rating-stars">★★★★★</div>
+          <div class="rating-count">2,400+ reviews</div>
+        </div>
+        <div class="rating-bars">
+          <div class="bar-row"><span>5★</span><div class="bar-track"><div class="bar-fill" style="width:88%"></div></div><span>88%</span></div>
+          <div class="bar-row"><span>4★</span><div class="bar-track"><div class="bar-fill" style="width:8%"></div></div><span>8%</span></div>
+          <div class="bar-row"><span>3★</span><div class="bar-track"><div class="bar-fill" style="width:3%"></div></div><span>3%</span></div>
+          <div class="bar-row"><span>2★</span><div class="bar-track"><div class="bar-fill" style="width:1%"></div></div><span>1%</span></div>
+          <div class="bar-row"><span>1★</span><div class="bar-track"><div class="bar-fill" style="width:0%"></div></div><span>0%</span></div>
+        </div>
+      </div>
+      <!-- Review Cards -->
+      <div class="reviews-grid" id="reviewsGrid">
+        <!-- Populated by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CITIES SECTION ====== -->
+  <section id="cities">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label">Coverage</span>
+        <h2 class="section-title">We Serve <span>Your City</span></h2>
+        <div class="section-divider center"></div>
+        <p class="section-sub">Available across 6 major cities with same-day delivery options.</p>
+      </div>
+      <div class="cities-grid" id="citiesGrid">
+        <!-- Populated by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== AI RECOMMENDATION SECTION ====== -->
+  <section id="ai-recommend">
+    <div class="container">
+      <div class="ai-box">
+        <span class="section-label">✦ AI Powered</span>
+        <h2 class="section-title">Get <span>Smart Recommendations</span></h2>
+        <div class="section-divider center"></div>
+        <p class="ai-intro">Select your preferences and our AI will suggest the perfect package for you.</p>
+        <div class="ai-tags" id="aiTags">
+          <span class="ai-tag" data-val="birthday">🎂 Birthday</span>
+          <span class="ai-tag" data-val="wedding">💍 Wedding</span>
+          <span class="ai-tag" data-val="small">👤 Small (1–10)</span>
+          <span class="ai-tag" data-val="large">👥 Large (50+)</span>
+          <span class="ai-tag" data-val="budget">💰 Budget</span>
+          <span class="ai-tag" data-val="luxury">👑 Luxury</span>
+          <span class="ai-tag" data-val="outdoor">🌿 Outdoor</span>
+          <span class="ai-tag" data-val="indoor">🏠 Indoor</span>
+          <span class="ai-tag" data-val="proposal">💐 Proposal</span>
+          <span class="ai-tag" data-val="babyshower">🍼 Baby Shower</span>
+        </div>
+        <button class="btn-ai" id="aiRecommendBtn">
+          <i class="fas fa-magic"></i> Get My Recommendation
+        </button>
+        <div class="ai-result" id="aiResult">
+          <div class="ai-result-title" id="aiResultTitle">✦ AI Recommendation</div>
+          <p class="ai-result-text" id="aiResultText"></p>
+          <button class="btn-primary" id="aiBookBtn" style="margin-top:1rem">
+            <i class="fas fa-calendar-check"></i> Book This Package
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FAQ SECTION ====== -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label">FAQ</span>
+        <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+        <div class="section-divider center"></div>
+      </div>
+      <div class="faq-list" id="faqList">
+        <!-- Populated by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-name">✦ DecorLux</div>
+          <p>India's premium event decoration platform. Crafting magical moments since 2020. Serving 6 cities with love and elegance.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="#">Birthday Setup</a></li>
+            <li><a href="#">Wedding Decor</a></li>
+            <li><a href="#">Anniversary</a></li>
+            <li><a href="#">Baby Shower</a></li>
+            <li><a href="#">Proposals</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press Kit</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Support</h5>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#tracking">Track Order</a></li>
+            <li><a href="#">Refund Policy</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 <strong>Saif</strong>. All Rights Reserved. | DecorLux — Premium Event Decoration Platform</span>
+        <span class="footer-love">Made with ❤️ in India</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====== FLOATING BUTTONS ====== -->
+  <!-- WhatsApp -->
+  <a href="https://wa.me/919876543210?text=Hi!%20I%20want%20to%20book%20a%20decoration" 
+     class="wa-fab" target="_blank" rel="noopener" title="Chat on WhatsApp" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- AI Chatbot Toggle -->
+  <button class="chat-fab" id="chatFab" title="AI Assistant" aria-label="Open AI Chat">
+    <i class="fas fa-comments"></i>
+  </button>
+
+  <!-- ====== AI CHATBOT BUBBLE ====== -->
+  <div class="chat-bubble" id="chatBubble" role="dialog" aria-label="AI Chat Assistant">
+    <div class="chat-header">
+      <div class="chat-avatar">✦</div>
+      <div class="chat-header-info">
+        <div class="chat-name">DecorLux AI Assistant</div>
+        <div class="chat-status">Online • Replies instantly</div>
+      </div>
+      <button class="chat-close-btn" id="chatClose" aria-label="Close chat">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="chat-messages" id="chatMessages" role="log" aria-live="polite">
+      <div class="chat-msg bot">
+        👋 Hi! I'm your DecorLux AI assistant. I can help with bookings, pricing, and package suggestions. What would you like to know?
+      </div>
+    </div>
+    <div class="chat-suggestions" id="chatSuggestions">
+      <button class="chat-suggest" data-msg="View Packages">📦 Packages</button>
+      <button class="chat-suggest" data-msg="Pricing Info">💰 Pricing</button>
+      <button class="chat-suggest" data-msg="Book Now">📅 Book Now</button>
+      <button class="chat-suggest" data-msg="Track Order">🔍 Track</button>
+      <button class="chat-suggest" data-msg="Coupon Codes">🎟️ Coupons</button>
+    </div>
+    <div class="chat-input-row">
+      <input type="text" id="chatInput" placeholder="Type a message..." autocomplete="off" />
+      <button class="chat-send" id="chatSend" aria-label="Send message">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- ====== BOOKING MODAL ====== -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="Booking Form">
+    <div class="modal" id="bookingModal">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div class="modal-title" id="modalTitle">Book Your Decoration</div>
+        <button class="modal-close" id="modalClose" aria-label="Close modal">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="progress-bar-wrap">
+        <div class="steps-labels" id="stepsLabels">
+          <div class="step-dot active" data-num="1">Occasion</div>
+          <div class="step-dot" data-num="2">Date</div>
+          <div class="step-dot" data-num="3">Add-ons</div>
+          <div class="step-dot" data-num="4">Details</div>
+          <div class="step-dot" data-num="5">Payment</div>
+          <div class="step-dot" data-num="6">Done</div>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill" style="width:16.6%"></div>
+        </div>
+      </div>
+
+      <!-- Modal Body - Step Panels -->
+      <div class="modal-body">
+
+        <!-- STEP 1: Select Occasion -->
+        <div class="step-panel active" id="step1">
+          <div class="step-title">Select Your Occasion</div>
+          <div class="step-sub">What are you celebrating today?</div>
+          <div class="occasion-grid" id="modalOccasionGrid">
+            <!-- Populated by script.js -->
+          </div>
+        </div>
+
+        <!-- STEP 2: Date & Time -->
+        <div class="step-panel" id="step2">
+          <div class="step-title">Select Date & Time</div>
+          <div class="step-sub">When would you like the decoration set up?</div>
+          <div class="date-time-grid">
+            <div class="form-group">
+              <label for="bookingDate">Event Date</label>
+              <input type="date" id="bookingDate" />
+            </div>
+            <div class="form-group">
+              <label for="bookingShift">Preferred Slot</label>
+              <select id="bookingShift">
+                <option value="morning">Morning (7AM – 11AM)</option>
+                <option value="afternoon">Afternoon (12PM – 4PM)</option>
+                <option value="evening">Evening (5PM – 9PM)</option>
+              </select>
+            </div>
+          </div>
+          <label>Quick Time Slots</label>
+          <div class="time-slots" id="timeSlots">
+            <!-- Populated by script.js -->
+          </div>
+        </div>
+
+        <!-- STEP 3: Add-ons -->
+        <div class="step-panel" id="step3">
+          <div class="step-title">Customize with Add-ons</div>
+          <div class="step-sub">Select optional extras to make your event extra special</div>
+          <div class="addons-grid" id="addonsGrid">
+            <!-- Populated by script.js -->
+          </div>
+          <!-- Live Price Summary -->
+          <div class="price-summary">
+            <div class="price-row"><span>Base Package</span><span id="basePrice">₹0</span></div>
+            <div class="price-row" id="addonsPriceRow" style="display:none">
+              <span>Add-ons</span><span id="addonsTotal">₹0</span>
+            </div>
+            <div class="price-row discount-row" id="discountRow" style="display:none">
+              <span>Discount 🎉</span><span id="discountAmt">-₹0</span>
+            </div>
+            <div class="price-row total">
+              <span>Total</span><span id="totalPrice">₹0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 4: User Details -->
+        <div class="step-panel" id="step4">
+          <div class="step-title">Your Details</div>
+          <div class="step-sub">Tell us about yourself and the venue</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="userName">Full Name *</label>
+              <input type="text" id="userName" placeholder="Your full name" />
+            </div>
+            <div class="form-group">
+              <label for="userPhone">Phone Number *</label>
+              <input type="tel" id="userPhone" placeholder="+91 98765 43210" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="userEmail">Email Address</label>
+            <input type="email" id="userEmail" placeholder="your@email.com" />
+          </div>
+          <div class="form-group">
+            <label for="userAddress">Full Address</label>
+            <textarea id="userAddress" rows="3" placeholder="House/Flat no., Street, Locality, City..."></textarea>
+          </div>
+          <div class="form-group">
+            <label for="userCity">City</label>
+            <select id="userCity">
+              <option>Patna</option>
+              <option>Delhi NCR</option>
+              <option>Mumbai</option>
+              <option>Bengaluru</option>
+              <option>Hyderabad</option>
+              <option>Kolkata</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Coupon Code</label>
+            <div class="coupon-row">
+              <input type="text" id="couponInput" placeholder="Enter code (try SAIF20)" />
+              <button class="btn-apply" id="applyCouponBtn">Apply</button>
+            </div>
+            <div class="coupon-msg" id="couponMsg"></div>
+            <div class="coupon-hint">
+              Available: <strong>SAIF20</strong> (20% off) | <strong>FIRST50</strong> (₹500 off) | <strong>LOVE15</strong> (15% off)
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 5: Payment -->
+        <div class="step-panel" id="step5">
+          <div class="step-title">Complete Payment</div>
+          <div class="step-sub">Secure payment powered by Razorpay</div>
+          <!-- Payment Summary -->
+          <div class="price-summary" style="margin-bottom:1.2rem">
+            <div class="price-row"><span>Package</span><span id="payPackageName">—</span></div>
+            <div class="price-row"><span>Add-ons</span><span id="payAddons">₹0</span></div>
+            <div class="price-row discount-row" id="payDiscountRow" style="display:none">
+              <span>Discount</span><span id="payDiscount">-₹0</span>
+            </div>
+            <div class="price-row total">
+              <span>Amount to Pay</span><span id="payTotal">₹0</span>
+            </div>
+          </div>
+          <!-- Payment Methods -->
+          <label>Choose Payment Method</label>
+          <div class="payment-methods" id="paymentMethods">
+            <div class="pay-method selected" data-method="card">
+              <i class="fas fa-credit-card"></i><span>Card</span>
+            </div>
+            <div class="pay-method" data-method="netbanking">
+              <i class="fas fa-university"></i><span>Net Banking</span>
+            </div>
+            <div class="pay-method" data-method="upi">
+              <i class="fas fa-mobile-alt"></i><span>UPI</span>
+            </div>
+          </div>
+          <button class="razorpay-btn" id="payBtn">
+            <i class="fas fa-lock"></i> Pay Securely via Razorpay
+          </button>
+          <p class="ssl-note">🔒 256-bit SSL encrypted. Your payment data is fully secure.</p>
+        </div>
+
+        <!-- STEP 6: Confirmation -->
+        <div class="step-panel" id="step6">
+          <div class="confirmation-content">
+            <div class="confirm-icon">🎉</div>
+            <div class="confirm-title">Booking Confirmed!</div>
+            <p class="confirm-sub">Your decoration will be set up on the scheduled date. We'll send you a confirmation SMS & email shortly.</p>
+            <div class="booking-ref" id="bookingRef">DL-2026-XXXX</div>
+            <div class="confirm-details" id="confirmDetails"></div>
+            <div class="confirm-btns">
+              <button class="btn-primary" id="goTrackBtn">
+                <i class="fas fa-map-marker-alt"></i> Track Order
+              </button>
+              <button class="btn-secondary-dark" id="closeAfterConfirm">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end modal-body -->
+
+      <!-- Modal Footer Navigation -->
+      <div class="modal-footer" id="modalFooter">
+        <button class="btn-prev" id="btnPrev">
+          <i class="fas fa-arrow-left"></i> Back
+        </button>
+        <button class="btn-next" id="btnNext">
+          Next <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== TOAST NOTIFICATION ====== -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- ====== MAIN SCRIPT ====== -->
+  <script src="script.js"></script>
+</body>
+</html>

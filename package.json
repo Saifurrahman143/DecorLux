@@ -1,0 +1,28 @@
+{
+  "name": "decorlux",
+  "version": "1.0.0",
+  "description": "Premium Event Decoration Booking Platform by Saif",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js",
+    "client": "open public/index.html"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^8.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "razorpay": "^2.9.2",
+    "nodemailer": "^6.9.7",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "keywords": ["event", "decoration", "booking", "india"],
+  "author": "Saif",
+  "license": "MIT"
+}
